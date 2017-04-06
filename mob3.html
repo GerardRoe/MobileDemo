@@ -1,0 +1,151 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Mobile Web App</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="myScript.js"></script>
+<style>
+.ui-page { -webkit-backface-visibility: hidden; }
+.landscape  { width: 480px; }
+.portrait { width: 320px; height:400px; }
+#box { background:gold; height:100px; width:100px;} 
+</style>
+
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>Page One</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview">
+			<li><a href="#page2" data-transition="slideup">Page Two</a></li>
+            <li><a href="#page3" data-transition="slidedown">Page Three</a></li>
+			<li><a href="#page4" data-transition="flip">Page Four</a></li>
+            <li><a href="#page5" data-rel="dialog">Page Five Dialog</a></li>
+            <li><a href="#page6" data-rel="dialog">Page Six Dialog</a></li>
+		</ul>		
+	</div>
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page2">
+	<div data-role="header">
+    <a href="#page" data-icon="info" class="ui-btn-right">home</a>
+		<h1>Page Two</h1>
+	</div>
+	<div data-role="content">	
+		<a href="#page">Content</a>	
+                <div class="ui-grid-b">
+                    <div class="ui-block-a"><div class="ui-bar ui-bar-c" style="width:60px"></div></div>
+                    <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="width:60px">Block B</div></div>
+                    <div class="ui-block-c"><div class="ui-bar ui-bar-b" style="width:60px">Block C <img src="" width="80:px" height="70:px" /></div></div>
+                    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="width:60px">Block A</div></div>
+                    <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="width:60px">Block B</div></div>
+                    <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="width:60px">Block C</div></div>
+                   <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="width:60px">Block D</div></div>                 
+                    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="width:60px">Block A</div></div>
+                    <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="width:60px">Block B</div></div>
+                    <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="width:60px">Block C</div></div>
+                </div><!-- /grid-c -->
+	
+	</div>
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page3">
+	<div data-role="header" data-fullscreen="true">
+		<h1>Page Three</h1>
+	</div>
+	<div data-role="content">
+    <p><a href="#" data-transition="slideup">Page Two
+    	<img src="demo.jpg" title="Demo" id="demoImg" class="portrait" >	
+    </a></p>
+	</div>
+    <script>
+        $("img").click(function () {
+			  $("#demoImg").animate({left: '10px', top: '10px'});
+			 // $("img").fadeOut( 12000, function () {
+			//		alert("No image");
+			 // });
+
+        }); 
+      </script>
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+
+
+<div data-role="page" id="page5">
+	<div data-role="header" data-fullscreen="true">
+		<h1>Page Five</h1>
+	</div>
+	<div data-role="content">
+    <p><a href="#page" data-transition="slideup">Page Two
+    	Ok this is a dialog></p>	
+    </a>
+	</div>
+    <div id="box">test</div>
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+
+
+<div data-role="page" id="page6">
+	<div data-role="header" data-fullscreen="true">
+		<h1>Page Six</h1>
+	</div>
+     <fieldset>
+      <div data-role="fieldcontain">
+          <label for="select-options" class="select">Choose an option:</label>
+          <select name="select-options" id="select-options">
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option2">Option 3</option>
+          </select>
+      </div>
+      </fieldset>
+      <input name="" type="submit" value="submit">
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page4" class="ui-content">
+	<div data-role="header">
+		<h1>Page Four Button Demo</h1>
+	</div>
+	<div data-role="content" data-role="fieldcontain" >	
+		Content	page 4 buttons
+        <a href="#page" class="ui-btn">Go to start</a>
+        <input type="button" value="Button1"/>
+        <button class="ui-btn">Button2 </button>
+	</div>
+    <div data-role="controlgroup" data-type="horizontal">
+      <p>Horizontal group:</p>
+      <a href="#page" 
+      class="ui-btn ui-btn-inline ui-shadow ui-icon-home ui-btn-icon-left" >
+          Button 1</a>
+      <a href="#" class="ui-btn ui-shadow ui-corner-all">Button 2</a>
+      <a href="#" 
+      	class="ui-btn ui-shadow ui-icon-info ui-btn-icon-top">
+        Button 3</a>
+    </div>
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+
+</body>
+</html>
